@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Awesome Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="top-menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <header id="home">
+    <h1>Welcome to My Awesome Blog</h1>
+    <p>Discover the Latest News, Tips, and Insights</p>
+  </header>
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I'm a passionate blogger who loves to share my thoughts and ideas about various topics. With years of experience in writing and a keen eye for details, I aim to provide high-quality content that engages and inspires my readers.</p>
+    </div>
+  </section>
+  <section id="blog">
+    <div class="container">
+      <h2>Latest Articles</h2>
+      <div class="article-list">
+        <article>
+          <img src="article1.jpg" alt="Article 1">
+          <h3>10 Tips for Effective Time Management</h3>
+          <p>Learn how to make the most of your time and boost productivity with these practical time management tips.</p>
+        </article>
+        <article>
+          <img src="article2.jpg" alt="Article 2">
+          <h3>The Art of Mindful Eating</h3>
+          <p>Discover the benefits of mindful eating and how it can improve your relationship with food and overall well-being.</p>
+        </article>
+        <article>
+          <img src="article3.jpg" alt="Article 3">
+          <h3>Mastering the Art of Public Speaking</h3>
+          <p>Get expert tips on how to become a confident and effective public speaker and captivate your audience.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="/contact" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </div>
+  </section>
+  <aside id="sidebar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </aside>
+  <script src="script.js"></script>
+</body>
+</html>

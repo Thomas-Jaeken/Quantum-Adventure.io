@@ -31,3 +31,11 @@ $(document).ready(function() {
     $('.top-menu ul li a').on('click', function() {
     $('.top-menu ul').removeClass('show');
     });
+
+    function formatMessage() {
+        var x = document.getElementById("contactform");
+        
+        text = encodeURIComponent(x.elements[2].value);
+       
+        document.getElementById("contactform").elements[2].value = text;
+      }

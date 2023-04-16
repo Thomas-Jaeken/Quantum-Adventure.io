@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Awesome Blog</title>
+  <title>Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,13 +14,18 @@
     </ul>
   </nav>
   <header id="home">
-    <h1>Welcome to My Awesome Blog</h1>
-    <p>Discover the Latest News, Tips, and Insights</p>
+    <h1>Join the Quantum Adventure</h1>
+    <p>Discover a collection of my favourite topics in Quantum Information</p>
   </header>
   <section id="about">
     <div class="container">
-      <h2>About Me</h2>
-      <p>I'm a passionate blogger who loves to share my thoughts and ideas about various topics. With years of experience in writing and a keen eye for details, I aim to provide high-quality content that engages and inspires my readers.</p>
+      <h2 style="text-align: center;">About Me</h2>
+      <p style="text-align: center;">Hi, I'm Thomas Jaeken, a PhD candidate researching Sattelite Quantum Communication at 
+        <a href="https://www.mostlyquantum.org" style="color: #1000a1; text-decoration: none;">Edinburgh Mostly Quantum Lab</a> graduating in May 2026.<br>
+        I am interested generally in the power Quantum can have over classical information.<br>
+        On this blog-like website, you will find several posts covering my encounters with different topics within Quantum Information (QI).
+     
+      </p>
     </div>
   </section>
   <section id="blog">
@@ -28,37 +33,40 @@
       <h2>Latest Articles</h2>
       <div class="article-list">
         <article>
-          <img src="article1.jpg" alt="Article 1">
-          <h3>10 Tips for Effective Time Management</h3>
-          <p>Learn how to make the most of your time and boost productivity with these practical time management tips.</p>
+          <a href="GKP.html"><img src="images/GKP_TOPVIEW.pdf" alt="GKP states" height="300" class="center"></a>
+          <h3><a href="GKP.html" style="color: #000000;">Gottesman Kitaev Preskill states</a></h3>
+          <p>Learn about a concept in continuous variable QI that might one day become the workhorse of Quantum Error correction.</p>
         </article>
         <article>
-          <img src="article2.jpg" alt="Article 2">
-          <h3>The Art of Mindful Eating</h3>
-          <p>Discover the benefits of mindful eating and how it can improve your relationship with food and overall well-being.</p>
+          <a href="satellite.html"><img src="images/satellite_image.png" alt="satellite" height="300" class="center"></a>
+          <h3><a href="satellite.html" style="color: #000000;">Intercontinental Satellite QKD</a></h3>
+          <p>This is the project I'm currently involved in. Satellite links are the most promising technology for global Quantum Communication.</p>
         </article>
         <article>
-          <img src="article3.jpg" alt="Article 3">
-          <h3>Mastering the Art of Public Speaking</h3>
-          <p>Get expert tips on how to become a confident and effective public speaker and captivate your audience.</p>
+          <img src="images/Wave-Function.jpeg" alt="wavefunction" height="300" class="center">
+          <h3><a href="wavefunction.html" style="color: #000000;">Reality of the wavefunction.</a></h3>
+          <p>The most aching question in Quantum Mechanics is whether it is an epistemic or ontological theory.
+            Learn about the two opposing views and how we are trying to narrow down the answer.
+          </p>
         </article>
       </div>
     </div>
   </section>
   <section id="contact">
     <div class="container">
-      <h2>Contact Me</h2>
-      <form action="/contact" method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+      <h2><a href="mailto:tj2022@hw.ac.uk" style="color: #ff7b00; text-decoration: none;"> &rarr; Contact Me &larr;</a></h2>
+      <!--<form id="contactform" action="mailto:tj2022@hw.ac.uk" method="get" onsubmit="formatMessage()">
+        Name:<br>
+        <input type="text" name="subject" required><br>
+        Email:<br>
+        <input type="email" name="email" required><br>
+        Message:<br>
+        <textarea name="body" rows="5" cols="30" required></textarea><br>
         <input type="submit" value="Send">
-      </form>
+      </form>-->
     </div>
   </section>
+  <!--
   <aside id="sidebar">
     <ul>
       <li><a href="#home">Home</a></li>
@@ -67,6 +75,15 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </aside>
+-->
+  <footer>
+    <div class="endBar">
+      <p> Thomas Jaeken &copy; 2023. All rights reserved. &emsp;&emsp;&emsp;&emsp;&emsp;</p>
+      
+      <a href="https://www.linkedin.com/in/thomas-jaeken-58a009189/"><img src="images/linked_in_logo.png" alt="linkedin" height="30"></a>
+      <a href="CV_Thomas_Jaeken-5.pdf"><img src="images/mail_icon.png" alt="mail" height="30"></a>
+  </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

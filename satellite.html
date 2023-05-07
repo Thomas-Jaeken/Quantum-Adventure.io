@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Intercontinental Satellite QKD</title>
+        <link rel="stylesheet" href="style_posts.css">
+      </head>
+<body>
+    <nav class="top-menu">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    <header>
+        <h2>
+            Intercontinental Satellite QKD
+        </h2>
+        <img src="images/satellite_image.png" height="300" style="filter: blur(0px);">
+    </header>
+    <section>
+        <hr>
+        <br>
+        <h2>
+            Setting The Scene
+        </h2>
+        <br>
+        <p>
+
+            The norm in satellite communication is RadioFrequency (RF).
+            However, substantial gain in bandwidth can be achieved by a switch to optical frequencies, making this a very appealing option. 
+            Several challenges have been preventing this technology from developing.
+            Attenuation in the atmoshpere is higher and optical signals cannot penetrate clouds.
+            The smaller beam width makes pointing and tracking a significantly harder issue.
+            Recent technological developments have made it possible to breach into this field.
+            <br>
+            With this technology developing, the scene is ideal for photonic Quantum Key Distribution (QKD)
+            to be developed alongside it.
+            <br>
+            QKD offers a specific advantage which is information theoretic security. 
+            To explain this concept properly we first need to introduce a common way of securing private messages called public-key encryption. 
+            <br>
+            Imagine bob wants to send Alice a message which no one else should have access to.
+            To avoid that the message be read by a third party he decides to scramble the letters in the message according to a certain algorithm which he gives some parameters as input.
+            These parameters make up what is the public key, because it is made public knowledge. 
+            <br>Only Alice's private key can decrypt the message.
+            </p>
+            <img src="images/private key encryption.pdf" height="300" style="filter: blur(0px);display: block;margin-left: auto;margin-right: auto;">
+            <p>
+            The security of the message relies on the fact that reverting the effect of the encryption algorithm, even given the public key, is a computationally hard task, meaning computers are bad at doing it.
+            This is called computationally secure.
+            One of the most used algorithms is called the RSA algorithm after its inventors Rivest, Shamir and Adleman.
+            The advent of Quantum Computation (QC) has showed us that this RSA algorithm can efficiently be reversed with the use of Shor's algorithm which would run on a Quantum Computer.
+            There is a general belief that all classical encryption algorithms will eventually be "hacked" with Quantum Algorithms.
+            <br>
+            Now we can get back to QKD. As I said, QKD is information theoretically secure. 
+            This simply means that no amount of computational power, classical or quantum, can ever revert the encryption. 
+            A very strong claim, and one that warrants further explanation.
+            <br>
+            The only known encryption scheme that actually offers information theoretic security is one-time-pad.
+            Here, the key is of the same length as the message. This way there is no remaining information in the form of patterns left in the encrypted message.
+            This means that from the hacker's point of view, no single string of this length is more likely to be the message than any other string. 
+            Indeed, the only information available is the length of the message.
+            <br>
+            But, you might ask, why could we not use a classical key to do one-time-pad. 
+            Very good question! &#128540; The issue is that there is no way to distribute the key while making sure no eavesdropping happens. 
+            This is where QKD comes in.
+            <br>
+            It allows us to distribute a key in a way that no third party can eavesdrop without us knowing. 
+            We rely on the very nature of quantum states to identify any eavesdropper which allows us to abort the transmission if one is found, making sure information never ends up in the wrong hands.
+        </p>
+        <br><br><br>
+        <h2>
+            QKD Explained
+        </h2>
+        <br>
+        <p>
+        QKD relies on the transmission of quantum information. This means we need access to a channel that preserves the quantum state of a qubit.
+        Generally, we would call this a quantum channel. 
+        Polarized photons in free space are a promising such channel, since they have very long coherence times meaning they stay quantum for long.
+        Several schemes have been developed to use photons for QKD but the one I will discuss is BBM92 since it is the best and very straightforward.
+        It also allows for scalability of networks in a trust-free manner, unlike its main competitor decoy-state BB84.
+        The premise is that there is a source of entangled photon pairs held by Eve. 
+        Of each pair, she sends one to Alice and one to Bob.
+        </p>
+        <img src="images/entangled.pdf" height="130" style="filter: blur(0px);display: block;margin-left: auto;margin-right: auto;">
+        <p>
+        Alice and Bob each measure in a random basis. 
+        Because of the nature of entanglement, they will only deterministacally measure the same outcome on their respective photon if they chose the same basis by chance. There is 100% correlation between their measurement outcomes.
+        In the other cases they will only measure the same half of the time, meaning there is no correlation at all.
+        After these measurements have been made on a large amount of photon pairs, Alice and Bob will publish their basis choices and discard the instances where they didnt use the same basis.
+        Ideally they will be left with a perfectly correlated key.
+        However, to identify potential eavesdroppers we need to sacrifice a part of the key to check if the correlation is indeed 100%.
+        If the correlation is lower than an agreed upon threshold, we conclude that the channel is not secure, and the process is aborted.
+        In order to cope with some non-ideal effects, there are a couple of protocols like error correction and privacy amplification. These I might touch on in a future post.
+        For now it suffices to know that these protocols eat into the size of the final key, which we want to avoid at all costs.
+        </p>
+        <br><br><br>
+        <h2>
+            Getting Satellites involved
+        </h2>
+        <br>
+        <p>
+        Communication channels always have a certain loss budget attributed to them.
+        The same is true for Quantum Channels.
+        In fact, Quantum Communication is especially sensitive to loss.
+        However, this comes from a technological immaturity, not a fundamental principle.
+        <br>
+        You see, in classical communication, the way people cope with loss is by just implementing a lot of reduncancy.
+        There is no physical reason that this should not be possible for quantum signals.
+        Today the technology to create single photons doesn't yet allow the power that can be achieved by classical light sources.
+        Neither do the detectors allow to detect photons at these rates.
+        So this is a technological challenge.
+        But even if the data rates are much lower, QKD still has a substantial market share for applications that require the highest security standards.
+        <br>
+        In fact, The only fundamental limit to QKD is decoherence and that is exactly where photons excel compared to other platforms.
+        But it is not obvious that photon sources and detectors will ever reach the levels required to work in a global optical fibre network.
+        <br>
+        In order to get around the losses that come with optical fibre networks, we revert to satellites to literally "carry" information.
+        In this case we only need a short free space link to the satellite, which can then fly anywhere and do the same there to establish a shared key between the two remote places.
+        The link with the satellite from the ground can happen in several configurations.
+        The source of entangled photons may be on board the satellite, this is called the down-link configuration. It can then send both photons down to distant Optical Ground Stations (OGS) as long as they are both in line of sight.
+        In this case the satellite need not be trusted.
+        Or it can send one down, measure the other on board and do the same when it passes over the other party. Now the satellite becomes a trusted node as it has full knowledge of the key.
+        The major drawbacks of a spaceborne source are limited power and no servicability or maintainability.
+
+        The other option is to have the source on the ground. This is the uplink configuration.
+        In this case one photon is sent to an overpassing satellite and the other can be routed to a point of interest in the vicinity of the OGS.
+        The satellite again would fly to the other party and repeat the process. It is thus again a trusted node.
+        
+        At first sight it seems a big sacrifice to trust the satellite. However, in the future, if the satellite would have on board a quantum memory, it would no longer need to be trusted.
+        On top of that, a satellite is already by itself a very well secured entity just because of how hard it is to interact with for a third party.
+         
+
+        Hopefully in the future, a network of satellites will be able to route the quantum information in an internet-like fashion.
+
+        </p>
+        <br><br><br>
+        <h2>
+            Outlook
+        </h2>
+        <br>
+        <p>
+            Several configurations for satellite links are being tried at the moment and only time can tell which will eventually make up the global network.
+            One thing is sure.
+            The road ahead is bright. 
+        </p>
+        <br><br>
+    </section>
+    <footer>
+        <div class="endBar">
+          <p> Thomas Jaeken &copy; 2023. All rights reserved. &emsp;&emsp;&emsp;&emsp;&emsp;</p>
+          <a href="https://www.linkedin.com/in/thomas-jaeken-58a009189/"><img src="images/linked_in_logo.png" alt="linkedin" height="30"></a>
+          <a href="CV_Thomas_Jaeken-5.pdf"><img src="images/mail_icon.png" alt="mail" height="30"></a>
+      </div>
+      </footer>
+      <script src="script.js"></script>
+</body>
+</html>
